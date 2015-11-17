@@ -69,4 +69,9 @@ public class BeverageService {
     private ContentResolver getContentResolver() {
         return BeverageApplication.get().getContentResolver();
     }
+
+    public void loadRemoteBeverages() {
+        // fire off network request here... save results into the content provider
+        // and don't worry about who called you..
+    }
 }

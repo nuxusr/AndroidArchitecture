@@ -80,5 +80,4 @@ public class BeverageTests extends BaseTests{
 
     }
 
-
 }

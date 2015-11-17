@@ -1,6 +1,7 @@
 package com.domo.apparchitecture.injection.components;
 
 import com.domo.apparchitecture.activities.AddBeverageActivity;
+import com.domo.apparchitecture.activities.BeveragesActivity;
 import com.domo.apparchitecture.activities.EditBeverageActivity;
 import com.domo.apparchitecture.services.BeverageService;
 
@@ -12,6 +13,7 @@ public interface ApplicationComponent {
     // activities
     void inject(AddBeverageActivity addBeverageActivity);
     void inject(EditBeverageActivity editBeverageActivity);
+    void inject(BeveragesActivity beveragesActivity);
 
     BeverageService getBeverageService();
 

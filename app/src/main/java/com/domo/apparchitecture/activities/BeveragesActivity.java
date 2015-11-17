@@ -10,10 +10,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.domo.apparchitecture.BeverageApplication;
 import com.domo.apparchitecture.R;
 import com.domo.apparchitecture.adapters.BeveragesAdapter;
 import com.domo.apparchitecture.contracts.Beverage;
+import com.domo.apparchitecture.services.BeverageService;
 import com.domo.apparchitecture.utils.Constants;
+
+import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -23,9 +27,12 @@ public class BeveragesActivity extends ToolbarBaseActivity implements LoaderMana
 
     @Bind(R.id.beverage_recycle_view) RecyclerView mRecyclerView;
 
+    @Inject BeverageService mBeverageService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        BeverageApplication.getApplicationComponent().inject(this);
         setContentView(R.layout.activity_scrolling);
         ButterKnife.bind(this);
 
@@ -33,6 +40,9 @@ public class BeveragesActivity extends ToolbarBaseActivity implements LoaderMana
         setupRecycleView();
 
         getLoaderManager().initLoader(Constants.LOADER_ID_BEVERAGES, null, this);
+
+        // also fire off network request here...
+        mBeverageService.loadRemoteBeverages();
     }
 
     @Override
