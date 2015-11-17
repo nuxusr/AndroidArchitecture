@@ -24,9 +24,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class BeveragesActivity extends ToolbarBaseActivity implements LoaderManager.LoaderCallbacks<Cursor> {
-
     @Bind(R.id.beverage_recycle_view) RecyclerView mRecyclerView;
-
     @Inject BeverageService mBeverageService;
 
     @Override
