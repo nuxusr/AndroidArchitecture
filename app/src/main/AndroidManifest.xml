@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.domo.apparchitecture"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name=".BeverageApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".activities.BeveragesActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.AddBeverageActivity"
+            android:label="@string/title_activity_add_beverage"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".activities.EditBeverageActivity"
+            android:label="@string/title_activity_add_beverage"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <provider
+            android:name=".providers.BeverageProvider"
+            android:authorities="com.dallindyer.beverageprovider"
+            android:exported="false"/>
+    </application>
+
+</manifest>
